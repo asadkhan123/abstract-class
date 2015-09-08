@@ -1,0 +1,143 @@
+public class shapedone {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		shape [ ] shapeList = new shape[5];
+        shapeList[0] = new oval(4,10);
+        shapeList[1] = new rectangle(10,8);
+        shapeList[2] = new triangle(5.0,4.0,10.0);
+        shapeList[3] = new circle(7);
+        shapeList[4] = new square(5);
+        for (int i = 0; i < shapeList.length; i++)  {
+        	
+        	System.out.print (shapeList[i].str + "  " );
+	
+        	
+        	System.out.print (shapeList[i].area( ) + "  "  );
+	
+        	
+        	System.out.print (shapeList[i].colour() + "  ") ;
+        	
+        	System.out.println (shapeList[i].perimeter( ));
+
+		
+		
+		
+
+}
+	}
+}
+public abstract class  shape {
+    public String str;
+	
+    
+    public abstract double area();
+	
+    
+    public abstract double perimeter();
+	
+    
+    public abstract String colour();
+	
+    
+    public shape(String name){
+    	
+    
+    	str =name;
+    	
+    }
+
+}
+public class rectangle extends shape {
+
+	public String naam;
+public double len,wid;
+
+public rectangle (double len,double wid){
+	super("Rectangle");
+this.len=len;
+this.wid=wid;
+}
+
+public rectangle (String name){
+	super("square");
+}
+
+public double area (){return len * wid;}
+public double perimeter(){ return 2*(len+wid);}
+public String colour (){return "yelllow";}
+
+}
+public class square extends rectangle {
+
+
+public square(double side){
+super("Square");
+ len = wid = side;
+
+}
+
+public String colour(){return "red";}
+}
+public class triangle extends shape {
+
+public double a,b,c;	
+
+public trian( double a, double b, double c){
+	super("Triangle");
+this.a=a;
+this.b=b;
+this.c=c;
+
+}
+public double area(){return 0.5*a*b;}
+public double perimeter(){return a+b+c;}
+public String colour(){return "Golden";}
+
+
+}
+
+
+public class circle extends shape  {
+public double r;
+
+public circle (double r){
+	
+	
+	
+	super("Circle");
+	this.r = r;
+	
+}
+
+public circle (String name){
+	super("Oval");
+}
+
+
+
+public double area (){return 3.142*r*r;}
+public double perimeter (){return 2*3.142*r;}
+public String colour() {return "Black";}
+}
+
+public class oval extends circle {
+
+public double z,x;
+
+
+public oval(double z, double x){
+ super("Oval");
+this.z=z;
+this.x=x;
+
+}
+public double area (){return  3.142*z*x;}
+public double perimeter(){return 2*3.142*((z*z)+(x*x)/2);}
+public String colour (){return "Silver";}
+
+}
+
+
